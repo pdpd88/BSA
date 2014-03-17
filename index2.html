@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+<html>
+  
+<head>
+<script type="text/javascript" src="jquery.js"></script>
+<title>Motorcycle Club</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+  * {padding:0; margin:0;}
+  a {text-decoration:none;}
+  p {padding-left:10px;}
+  body {background-color:#441111;}
+  .container {width:100%; height:100%; margin-left:auto; margin-right:auto; background-color:#FFFFFF; }
+  .header {background-color:#441111; height:200px; margin-top:80px; }
+  .header h1 {color:white;  line-height:80px;}
+  .header img {float:left; height:70px; width:100px; padding:5px; margin-right:20px}
+  .nav {background-color:#bb9955; width:20%;  float:left; text-align:center; height:900px;}
+  .nav ul {margin:15px; list-style-type:none; }
+  .content {float:left; width:60%; text-align:center; background-color:#BDBDBD; height:900px;}
+  .right {background-color:#bb9955; float:left; width:20%; text-align:center; height:900px;  }
+  .footer {clear:left; background-color:#441111; text-align:center; height:20%; }
+  .Jss {margin-left:40%; }
+  .tables {margin-left:auto; margin-right:auto; width:90%;}
+  .rightlogo {margin-top:40%;}
+  
+</style>
+
+</head>
+
+<body>
+ <div class="container">
+  <div class="header">
+  <div class="Jss">
+   <script type="text/javascript">
+<!-->
+var img1=new Image()
+img1.src="images/poster1.jpg"
+var img2=new Image()
+img2.src="images/poster2.jpg"
+var img3=new Image()
+img3.src="images/poster3.jpg"
+var img4=new Image()
+img4.src="images/poster4.jpg"
+var img5=new Image()
+img5.src="images/poster5.jpg"
+var img6=new Image()
+img6.src="images/poster6.jpg"
+//-->
+</script>
+
+<img src="images/poster1.jpg" name="slide" height="300px" width="400px" >
+
+
+    <script type="text/javascript">
+	
+        <!--
+		var pic=1
+		function slides() {
+		
+		if(!document.images)
+			return
+		
+		document.images.slide.src=eval ("img"+pic+".src")
+		if(pic < 6)
+		pic++
+		else
+		pic=1
+		setTimeout("slides()",4000)
+		}
+		slides()
+		//-->
+	</script>
+  </div>
+  <h1>Motorcycle Club</h1>
+  </div>
+
+  <div class="nav"><BR><BR>
+   <p><strong>Menu</strong></p>
+   <ul>
+    <li><a href="one.html">Home</a></li><BR>
+    <li><a href="two.html">Register</a></li><BR>
+    <li><a href="three.html">About Us</a></li><BR>
+   </ul>
+   
+  </div>
+
+  <div class="content">
+	<?php @session_start();
+			$connection = mysql_connect("cdanos.co.uk.mysql", "cdanos_co_uk", "2WsMZZbE") or die(mysql_error());
+		mysql_select_db("cdanos_co_uk", $connection) or die(mysql_error());
+			
+		print "<p> Logged in as ".$_SESSION["authenticatedUser"]."</p>";
+		
+	?>
+	
+	<form name="input" action="logout.php" method="post">
+		<input type="submit" value="Logout">
+	</form>
+	
+	<div class="tables">
+		<table border="0">
+			<tr>
+				<td><img src="images\poster1.jpg" width="250" height="220"/></td>
+				<td><img src="images\poster2.jpg" width="250" height="220"/></td>
+				<td><img src="images\poster3.jpg" width="250" height="220"/></td>
+				<td><img src="images\poster4.jpg" width="250" height="220"/></td>
+						
+							
+			</tr>
+		</table>
+	</div>		
+	
+	<td width="173" height="159"><h2 align="top">Select Motorcycle Model </h2>
+<form name="Brand" form method="GET" action="index2.php">
+
+<label>
+<select name="Brand" id="Brand">
+<option value="BSA">BSA</option>
+<option value="NORTON">NORTON</option>
+<option value="MATCHLESS">MATCHLESS</option>
+<option value="AJS">AJS</option>
+<option value="TRIUMPH">TRIUMPH</option>
+</select>
+</label>
+<label>
+<br>
+<input type="submit" name="Submit" value="Search Brand">
+</label>
+</form>
+
+<?php
+
+
+//connect to the database
+
+$connection = mysql_connect("cdanos.co.uk.mysql", "cdanos_co_uk", "2WsMZZbE") or die(mysql_error());
+		mysql_select_db("cdanos_co_uk", $connection) or die(mysql_error());
+				
+		
+$Brand = $_GET['Brand'];
+$query = "SELECT * FROM Brand WHERE Brand = '$Brand'";
+$result = mysql_query($query) or die ('error getting data');
+// see if any rows were returned
+if (mysql_num_rows($result)>0) {
+//If so, print the table headers
+echo "<table border=1>\n<tr>" .
+"<th>Brand_id</th>" .
+"<th>Brand</th>".
+"<th>Date</th>" .
+"<th>HorsePower</th>" .
+"<th>Price</th>" .
+"<th>Image</th> </tr>";
+while ($row = mysql_fetch_array($result)) {
+echo "<tr>";
+echo "<td>".$row["Brand_id"]."</td>";
+echo "<td>".$row["Brand"]."</td>";
+echo "<td>".$row["Date"]."</td>";
+echo "<td>".$row["HorsePower"]."</td>";
+echo "<td>".$row["Price"]."</td>";
+//this line creates a image link to an image in the images directory
+echo "<td><img src=images/".$row["Image"]." height=80px width=80px /></td>";
+echo "</tr>";
+} //Finish the while loop
+echo "</table>"; //Finsh the table
+} //Finish 'if rows found'
+else {
+// print status message
+echo "<p>No rows found!<p>";
+}
+		
+
+?>
+
+
+		
+			<form name=myform>
+<input type=button value="ORDER NOW" 
+onClick="alert('Your order has been placed!')">
+
+  </div>
+  
+
+
+  <div class="right">
+			<BR><BR><BR>
+			<form method="POST" action="login.php">
+                                 
+				<label for="email">User Name: </label>
+				<input type="text" name="email" id="email" required="required"/><BR>
+				<label for="passwd">Password: </label>
+				<input type="password" name="password" id="password" required="required"/><BR>
+				<input type="submit" value="Login" />
+				<input type="reset" value="Clear" />
+				
+			</form>
+			
+			<form method="POST" action="admin.php">
+				<input type="submit" value="Administrator" />
+			</form>
+	<div class="rightlogo">		
+	<img src="images/logo.jpg" alt="logo" height="300px" width="350px">		 
+	</div>		 
+  </div>
+
+  <div class="footer">
+   <?php
+
+
+$hours = date("G");
+if ( ($hours > 12)&&($hours < 23 )){
+	print "Good Afternoon.<br> ";
+	}
+else if(($hours <= 23) && ($hours <= 5)){
+	print "Good Night. <BR>";
+	}
+else {
+	print "Good Morning.<br> ";
+	}	
+
+print date("d M Y / H:i:s");
+
+?>
+
+<BR>
+
+<a href="siterss.xml"><img src="images\RSS.png" width="50" height="50"/></a>
+
+  </div>
+
+ </div>
+</body>
+</html> 

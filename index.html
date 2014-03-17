@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html>
+  
+<head>
+<script type="text/javascript" src="jquery.js"></script>
+<title>Motorcycle Club</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+  * {padding:0; margin:0;}
+  a {text-decoration:none;}
+  p {padding-left:10px;}
+  body {background-color:#441111;}
+  .container {width:100%; height:100%; margin-left:auto; margin-right:auto; background-color:#FFFFFF; }
+  .header {background-color:#441111; height:200px; margin-top:80px; }
+  .header h1 {color:white;  line-height:80px;}
+  .header img {float:left; height:70px; width:100px; padding:5px; margin-right:20px}
+  .nav {background-color:#bb9955; width:20%;  float:left; text-align:center; height:900px;}
+  .nav ul {margin:15px; list-style-type:none; }
+  .content {float:left; width:60%; text-align:center; background-color:#BDBDBD; height:900px;}
+  .right {background-color:#bb9955; float:left; width:20%; text-align:center; height:900px;  }
+  .footer {clear:left; background-color:#441111; text-align:center; height:20%; }
+  .Jss {margin-left:40%; }
+  .tables {margin-left:auto; margin-right:auto; width:70%;}
+  .rightlogo {margin-top:40%;}
+  
+</style>
+
+</head>
+
+<body>
+ <div class="container">
+  <div class="header">
+  <div class="Jss">
+   <script type="text/javascript">
+<!-->
+var img1=new Image()
+img1.src="images/poster1.jpg"
+var img2=new Image()
+img2.src="images/poster2.jpg"
+var img3=new Image()
+img3.src="images/poster3.jpg"
+var img4=new Image()
+img4.src="images/poster4.jpg"
+var img5=new Image()
+img5.src="images/poster5.jpg"
+var img6=new Image()
+img6.src="images/poster6.jpg"
+//-->
+</script>
+
+<img src="images/poster1.jpg" name="slide" height="300px" width="400px" >
+
+
+    <script type="text/javascript">
+	
+        <!--
+		var pic=1
+		function slides() {
+		
+		if(!document.images)
+			return
+		
+		document.images.slide.src=eval ("img"+pic+".src")
+		if(pic < 6)
+		pic++
+		else
+		pic=1
+		setTimeout("slides()",4000)
+		}
+		slides()
+		//-->
+	</script>
+  </div>
+  <h1>Motorcycle Club</h1>
+  </div>
+
+  <div class="nav"><BR><BR>
+   <p><strong>Menu</strong></p>
+   <ul>
+    <li><a href="one.html">Home</a></li><BR>
+    <li><a href="two.html">Register</a></li><BR>
+    <li><a href="three.html">About Us</a></li><BR>
+   </ul>
+   
+  </div>
+
+  <div class="content">
+   <div class="tables">
+  <BR><BR>
+   <p><strong>New Arrivals!!!</strong></p><BR>
+  
+   <table border="0">
+		<tr>
+			<th>BSA 1965</th>
+			<th>Norton 1975</th>
+		</tr>
+		<tr>
+			<td><img src="images/poster4.jpg" alt="BSA" height="300px" width="400px"></td>
+			<td><img src="images/poster6.jpg" alt="Norton" height="300px" width="400px"></td>
+		</tr>
+	</table><BR><BR>
+	
+	<p><strong>Offers!!!</strong></p><BR><BR>
+	<table border="0">
+		<tr>
+			<th>AJS 1970</th>
+			<th>Norton 1975</th>
+		</tr>
+		<tr>
+			<td><img src="images/poster5.jpg" alt="BSA" height="300px" width="400px"></td>
+			<td><img src="images/poster5.jpg" alt="BSA" height="300px" width="400px"></td>
+		</tr>
+		<tr>
+			<td>row 2, cell 1</td>
+			<td>row 2, cell 2</td>
+		</tr>
+	</table>
+	</div>
+  </div>
+  
+
+
+  <div class="right">
+			<BR><BR><BR>
+			<form method="POST" action="login.php">
+                                 
+				<label for="email">User Name: </label>
+				<input type="text" name="email" id="email" required="required"/><BR>
+				<label for="passwd">Password: </label>
+				<input type="password" name="password" id="password" required="required"/><BR>
+				<input type="submit" value="Login" />
+				<input type="reset" value="Clear" />
+				
+			</form>
+			
+			<form method="POST" action="admin.php">
+				<input type="submit" value="Administrator" />
+			</form>
+	<div class="rightlogo">		
+	<img src="images/logo.jpg" alt="logo" height="300px" width="350px">		 
+	</div>		 
+  </div>
+
+  <div class="footer">
+   <?php
+
+
+$hours = date("G");
+if ( ($hours > 12)&&($hours < 23 )){
+	print "Good Afternoon.<br> ";
+	}
+else if(($hours <= 23) && ($hours <= 5)){
+	print "Good Night. <BR>";
+	}
+else {
+	print "Good Morning.<br> ";
+	}	
+
+print date("d M Y / H:i:s");
+
+?>
+
+<BR>
+
+<a href="siterss.xml"><img src="images\RSS.png" width="50" height="50"/></a>
+
+  </div>
+
+ </div>
+</body>
+</html> 
